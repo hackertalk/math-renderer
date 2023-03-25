@@ -37,5 +37,5 @@ Resource: `arn:aws:lambda:my-region:my-aws-account-id:function:math-renderer`
 
 ## References
 
-1. [Nodejs + Serverless实现LaTeX公式渲染服务](https://markdowner.net/article/235800197744746496)
+1. [Nodejs + Serverless 实现 LaTeX 公式渲染服务](https://markdowner.net/article/235800197744746496)
 2. [typescript package](https://docs.aws.amazon.com/lambda/latest/dg/typescript-package.html)

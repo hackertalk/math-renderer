@@ -10,7 +10,7 @@ export const handler = async (
   context: Context
 ): Promise<APIGatewayProxyResult> => {
   const { queryStringParameters: params, path } = event;
-  if (path !== '/') {
+  if (path !== '') {
     return { statusCode: 404, body: JSON.stringify({ message: 'Page Not Found' }) };
   }
   let isInline = false;
