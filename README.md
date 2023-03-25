@@ -33,7 +33,17 @@ Required permissions:
 actions: `lambda:UpdateFunctionCode`, `lambda:UpdateFunctionConfiguration`
 Resource: `arn:aws:lambda:my-region:my-aws-account-id:function:math-renderer`
 
+## Use AWS Lambda@Edge and CloudFront to render math
+
+Change runtime handler to `index.edgeHandler` on aws console.
+
 ## Testing the function
+
+![](https://math.hackertalk.io/math?color=%23EAAA08&block=%5Cbegin%7Baligned%7D%0A%5Cnabla%20%5Ctimes%20%5Cvec%7B%5Cmathbf%7BB%7D%7D%20-%5C%2C%20%5Cfrac1c%5C%2C%20%5Cfrac%7B%5Cpartial%5Cvec%7B%5Cmathbf%7BE%7D%7D%7D%7B%5Cpartial%20t%7D%20%26%20%3D%20%5Cfrac%7B4%5Cpi%7D%7Bc%7D%5Cvec%7B%5Cmathbf%7Bj%7D%7D%20%5C%5C%20%20%20%0A%5Cnabla%20%5Ccdot%20%5Cvec%7B%5Cmathbf%7BE%7D%7D%20%26%20%3D%204%20%5Cpi%20%5Crho%20%5C%5C%0A%5Cnabla%20%5Ctimes%20%5Cvec%7B%5Cmathbf%7BE%7D%7D%5C%2C%20%2B%5C%2C%20%5Cfrac1c%5C%2C%20%5Cfrac%7B%5Cpartial%5Cvec%7B%5Cmathbf%7BB%7D%7D%7D%7B%5Cpartial%20t%7D%20%26%20%3D%20%5Cvec%7B%5Cmathbf%7B0%7D%7D%20%5C%5C%0A%5Cnabla%20%5Ccdot%20%5Cvec%7B%5Cmathbf%7BB%7D%7D%20%26%20%3D%200%20%5Cend%7Baligned%7D%0A)
+
+![](https://math.hackertalk.io/math?color=red&block=%5Cint%20u%20%5Cfrac%7Bdv%7D%7Bdx%7D%5C%2Cdx%3Duv-%5Cint%20%5Cfrac%7Bdu%7D%7Bdx%7Dv%5C%2Cdx)
+
+![](https://math.hackertalk.io/math?color=blue&block=%5Cint%20u%20%5Cfrac%7Bdv%7D%7Bdx%7D%5C%2Cdx%3Duv-%5Cint%20%5Cfrac%7Bdu%7D%7Bdx%7Dv%5C%2Cdx)
 
 ## References
 

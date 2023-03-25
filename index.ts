@@ -12,6 +12,9 @@ const DOCTYPE = `<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
 `;
 
+/**
+ * handler for cloudfront edge
+ * */
 export const edgeHandler = async (
   event: CloudFrontRequestEvent,
   context: Context
@@ -63,6 +66,9 @@ export const edgeHandler = async (
   }
 };
 
+/**
+ * handler for api gateway or function url
+ * */
 export const handler = async (
   event: APIGatewayEvent,
   context: Context
