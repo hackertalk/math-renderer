@@ -6,7 +6,7 @@ phases:
   pre_build:
     commands:
       - echo "Preparing build..."
-      - pip3 install awscli --upgrade --user
+      #      - pip3 install awscli --upgrade --user
       - yarn prebuild
   build:
     commands:
