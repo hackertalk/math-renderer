@@ -16,8 +16,6 @@ Done!
 
 ## Testing the function
 
-
 ## References
 
 1. [typescript package](https://docs.aws.amazon.com/lambda/latest/dg/typescript-package.html)
-
