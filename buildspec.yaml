@@ -1,0 +1,28 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      nodejs: 16
+  pre_build:
+    commands:
+      - echo "Preparing build..."
+      - pip3 install awscli --upgrade --user
+      - yarn prebuild
+  build:
+    commands:
+      - echo "Installing dependencies..."
+      - yarn install
+      - yarn build
+  post_build:
+    commands:
+      - echo "Updating lambda function..."
+      - yarn postbuild
+      - aws lambda update-function-code --function-name math-renderer --zip-file fileb://dist/index.zip
+      - echo "Done!"
+cache:
+  paths:
+    - 'node_modules/**/*'
+    - '/root/.m2/**/*'
+    - '/root/.npm/**/*'
+    - '/root/.yarn/**/*'
+    - '/root/.cache/pip/**/*'

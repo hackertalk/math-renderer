@@ -1,0 +1,24 @@
+{
+  "name": "hackertalk-math",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "esbuild index.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
+    "postbuild": "cd dist && zip -r index.zip index.js*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.114",
+    "esbuild": "^0.17.12",
+    "eslint": "^8.36.0",
+    "typescript": "^5.0.2"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7",
+    "mathjax-full": "^3.2.2"
+  }
+}
