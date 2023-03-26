@@ -1,6 +1,13 @@
-# Math Renderer
+# Math Renderer for AWS Lambda
 
 ![](./schematic-diagram.png)
+
+Query parameters:
+
+- inline: inline latex string
+- block: block latex string
+- color: color of the rendered image
+- alternativeColor: alternative color of the rendered image (dark mode)
 
 ## Deploying the function to AWS Lambda
 
@@ -13,10 +20,13 @@ Steps:
 - Run `yarn install & yarn build`, upload dist/index.zip file to lambda function
 - Set the handler to `index.handler`
 - Set the runtime to `Node.js 18.x`
+- Select configuration tab, create a function URL
 
 Done!
 
 ## Use AWS Codebuild to build and deploy
+
+You can use AWS Codebuild to build and deploy the function.
 
 - Create a new Codebuild project, project name: `math-renderer`
 - Set the source to `https://github.com/hackertalk/math-renderer`
@@ -35,7 +45,11 @@ Resource: `arn:aws:lambda:my-region:my-aws-account-id:function:math-renderer`
 
 ## Use AWS Lambda@Edge and CloudFront to render math
 
-Change runtime handler to `index.edgeHandler` on aws console.
+- Change runtime handler to `index.edgeHandler` on aws console
+- Create a new CloudFront distribution for the Lambda@Edge function
+- Set the origin to function url
+- Create a new cache policy, cache all query strings (best practice) and select the cache policy
+  for the distribution
 
 ## Testing the function
 
@@ -49,3 +63,5 @@ Change runtime handler to `index.edgeHandler` on aws console.
 
 1. [Nodejs + Serverless 实现 LaTeX 公式渲染服务](https://markdowner.net/article/235800197744746496)
 2. [typescript package](https://docs.aws.amazon.com/lambda/latest/dg/typescript-package.html)
+3. [Lambda@Edge example functions](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-examples.html)
+

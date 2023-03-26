@@ -5,8 +5,8 @@ import {
   CloudFrontRequestEvent,
   CloudFrontResponseResult,
 } from 'aws-lambda';
-import { tex2svg } from './adapter';
 import querystring from 'querystring';
+import { tex2svg } from './adapter';
 
 const DOCTYPE = `<?xml version="1.0" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
